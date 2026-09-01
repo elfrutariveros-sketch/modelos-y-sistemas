@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bodo Envíos — seguimiento y gestión de envíos." />
+  <title>Bodo Envíos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Bodo Envíos inicio">
+      <img src="assets/mascota.png" alt="Mascota Bodo" />
+      <span>BODO <small>ENVÍOS</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <div class="dropdown">
+        <button class="nav-link dropdown-toggle" type="button">Servicios <span>⌄</span></button>
+        <div class="dropdown-menu">
+          <a href="#seguimiento">Seguimiento</a>
+          <a href="#devoluciones">Devoluciones</a>
+          <a href="#ayuda">Chat en vivo</a>
+        </div>
+      </div>
+      <a class="nav-link" href="#envios">Envíos</a>
+      <a class="nav-link" href="#sucursales">Sucursales</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" title="Cambiar apariencia" aria-label="Cambiar apariencia">◐</button>
+      <button class="outline-btn" data-modal="loginModal">Iniciar sesión</button>
+      <button class="outline-btn" data-modal="registerModal">Registrarse</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">BODO ENVÍOS</span>
+        <h1>Tu envío,<br /><strong>siempre en camino.</strong></h1>
+        <p>Seguimiento simple, información clara y ayuda cuando la necesitás.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#seguimiento">Rastrear mi paquete <span>→</span></a>
+          <button class="ghost-btn" data-modal="sendModal">Crear un envío</button>
+        </div>
+        <div class="quick-stats">
+          <div><strong>24/7</strong><span>Seguimiento</span></div>
+          <div><strong>+100</strong><span>Puntos de atención</span></div>
+          <div><strong>1 lugar</strong><span>Para tus envíos</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div>
+        <div class="package-card"><span>📦</span><b>EN CAMINO</b><small>OOLAJJS</small></div>
+        <img src="assets/mascota.png" alt="Bodo, asistente de envíos" class="mascot" />
+      </div>
+    </section>
+
+    <section class="tracking section" id="seguimiento">
+      <div class="section-heading">
+        <div><span class="eyebrow">SEGUIMIENTO</span><h2>¿Dónde está tu paquete?</h2></div>
+        <p>Ingresá el identificador de tu envío para consultar su estado.</p>
+      </div>
+      <div class="tracking-panel">
+        <div class="track-form">
+          <label for="trackingInput">Número de paquete</label>
+          <div class="input-row"><input id="trackingInput" value="OOLAJJS" placeholder="Ej. OOLAJJS" maxlength="12" /><button class="primary-btn" id="trackBtn">Consultar</button></div>
+          <div class="examples"><button data-code="OOLAJJS">Probar OOLAJJS</button><button data-code="MJS44K66">Probar MJS44K66</button></div>
+        </div>
+        <div class="track-result" id="trackResult">
+          <div class="status-dot"></div><div><span>ESTADO DEL ENVÍO</span><h3>En proceso de entrega</h3><p>Repartidor: Gutiérrez Miguel · Dirección: Mitre N°8678</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="envios">
+      <div class="section-heading centered"><span class="eyebrow">SERVICIOS</span><h2>Todo Bodo, en un solo lugar.</h2><p>Una interfaz inspirada en la propuesta original, pero pensada para usarla cómodamente desde cualquier pantalla.</p></div>
+      <div class="service-grid">
+        <button class="service-card active" data-service="envios"><span class="service-icon">✈</span><b>Envíos</b><small>Gestioná tus paquetes</small></button>
+        <button class="service-card" data-service="sucursales"><span class="service-icon">⌂</span><b>Sucursales</b><small>Encontrá un punto cercano</small></button>
+        <button class="service-card" data-service="cuenta"><span class="service-icon">●</span><b>Mi cuenta</b><small>Datos e historial</small></button>
+        <button class="service-card" data-service="legal"><span class="service-icon">i</span><b>Info Legal</b><small>Condiciones y privacidad</small></button>
+      </div>
+      <div class="service-detail" id="serviceDetail"><b>Envíos</b><span>Podés crear un envío, consultar su estado y revisar movimientos recientes.</span><button class="text-btn" data-modal="sendModal">Crear envío →</button></div>
+    </section>
+
+    <section class="help section" id="ayuda">
+      <div class="help-card">
+        <div><span class="eyebrow">CONSULTALE A BODO</span><h2>¿Necesitás una mano?</h2><p>Preguntá por demoras, puntos de entrega, devoluciones o cualquier detalle de tu envío.</p></div>
+        <button class="primary-btn" id="chatBtn">Abrir chat</button>
+      </div>
+    </section>
+
+    <section class="info-grid section" id="sucursales">
+      <article><span>📍</span><h3>Sucursales</h3><p>Buscá el punto de atención que mejor te quede.</p><button class="text-btn" id="branchBtn">Ver sucursales →</button></article>
+      <article id="devoluciones"><span>↩</span><h3>Devoluciones</h3><p>Iniciá una solicitud y consultá el estado de tu devolución.</p><button class="text-btn" data-modal="returnModal">Quiero una devolución →</button></article>
+      <article><span>▣</span><h3>Historial</h3><p>Revisá tus envíos anteriores y sus estados.</p><button class="text-btn" data-modal="loginModal">Ver historial →</button></article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><b>Redes sociales</b><span>◎</span><span>f</span><span>𝕏</span></div>
+    <div>bodoenvios@gmail.com <span>/</span> info legal</div>
+  </footer>
+
+  <div class="modal" id="loginModal"><div class="modal-card"><button class="close">×</button><img src="assets/mascota.png" alt="Bodo"/><span class="eyebrow">CUENTA</span><h2>Iniciar sesión</h2><p>Accedé a tus envíos e historial.</p><form class="demo-form" data-demo="login"><input type="email" placeholder="correo electronico..." required/><input type="password" placeholder="contraseña..." required/><button class="primary-btn">Ingresar</button></form><button class="modal-link" data-modal="registerModal">¿No tienes cuenta? Registrarse</button><button class="modal-link" data-modal="recoverModal">¿Olvidaste tu contraseña?</button></div></div>
+  <div class="modal" id="registerModal"><div class="modal-card"><button class="close">×</button><img src="assets/mascota.png" alt="Bodo"/><span class="eyebrow">CUENTA</span><h2>Registrarse</h2><form class="demo-form" data-demo="register"><input type="email" placeholder="correo electronico..." required/><input type="password" placeholder="contraseña..." required/><input type="tel" placeholder="numero de telefono..." required/><input placeholder="DNI / Identificación nacional..." required/><button class="primary-btn">Crear cuenta</button></form><button class="modal-link" data-modal="loginModal">¿Ya tienes cuenta? Iniciar sesión</button></div></div>
+  <div class="modal" id="recoverModal"><div class="modal-card"><button class="close">×</button><img src="assets/mascota.png" alt="Bodo"/><span class="eyebrow">RECUPERAR</span><h2>Recuperar contraseña</h2><form class="demo-form" data-demo="recover"><input type="email" placeholder="correo electronico..." required/><button class="primary-btn">Enviar código</button></form><p class="demo-message">También podés solicitar el código por SMS.</p></div></div>
+  <div class="modal" id="sendModal"><div class="modal-card wide"><button class="close">×</button><span class="eyebrow">NUEVO ENVÍO</span><h2>Creá tu envío</h2><div class="form-grid"><input placeholder="Localidad de origen"/><input placeholder="Ciudad de destino"/><input placeholder="Código postal"/><input placeholder="Tipo de producto"/><input placeholder="Peso"/><input placeholder="Tipo de envío (Estándar / Express)"/></div><button class="primary-btn" id="createSend">Continuar</button></div></div>
+  <div class="modal" id="returnModal"><div class="modal-card"><button class="close">×</button><span class="eyebrow">DEVOLUCIONES</span><h2>Quiero una devolución</h2><textarea placeholder="Contanos el motivo de la devolución..."></textarea><button class="primary-btn" id="returnBtn">Enviar solicitud</button></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
